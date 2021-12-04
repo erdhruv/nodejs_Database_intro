@@ -16,13 +16,13 @@ btn.addEventListener("click", function(){
             var fname = inputVal;
             var em = email;
             var count = 1;
-            let pool = await sql.connect(config);
+            let pool = await connect(config);
             let Users = await pool.request()
-                                    .input('p2', sql.VarChar(50), user)
-                                    .input('p3', sql.VarChar(50), paaas)
-                                    .input('p4', sql.VarChar(50), fname)
-                                    .input('p5', sql.VarChar(50), em)
-                                    .input('p6', sql.Int, count)
+                                    .input('p2', VarChar(50), user)
+                                    .input('p3', VarChar(50), paaas)
+                                    .input('p4', VarChar(50), fname)
+                                    .input('p5', VarChar(50), em)
+                                    .input('p6', Int, count)
                                     .query('insert into [Users].[dbo].[users] (UserName,Password,FullName,EmailId,Id) values (@p2, @p3, @p4, @p5, @p6)');
             return Users.recordset;
         }
