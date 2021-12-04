@@ -1,4 +1,4 @@
-var config = require('./dbconfig')
+/*var config = require('./dbconfig')
 const sql = require('mssql')
 var inputVal = document.getElementById('name');
 var uname = document.getElementById('user');
@@ -36,3 +36,4 @@ btn.addEventListener("click", function(){
     }
 
 })
+*/
